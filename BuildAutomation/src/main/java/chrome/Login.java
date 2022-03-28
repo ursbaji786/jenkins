@@ -17,22 +17,10 @@ public class Login {
 	@Test
 	public void loginToLeafTaps() {
                  // Read the param                             
-		String browser = System.getProperty("browser");
-		System.out.print(browser);
-		if(browser == null){
-			browser = "chrome";
-		}
-		if(browser.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			driver = new ChromeDriver();
-		}else if(browser.equals("edge")) {
-			WebDriverManager.edgedriver().setup();
-			driver = new EdgeDriver();
-		}else if(browser.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
-			driver = new FirefoxDriver();
-		}
-
+		
+			
+		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		driver = new ChromeDriver(); 
 
 		driver.get("http://leaftaps.com/opentaps/");
 		driver.findElementById("username").sendKeys("demosalesmanager");
@@ -41,18 +29,6 @@ public class Login {
 		driver.findElementByClassName("decorativeSubmit").click();
 		driver.close();
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
