@@ -19,7 +19,7 @@ public class Login {
                  // Read the param                             
 		
 			
-		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
 		driver = new ChromeDriver(); 
 
 		driver.get("http://leaftaps.com/opentaps/");
