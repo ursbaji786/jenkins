@@ -20,21 +20,15 @@ public class Login {
 		
 		String browser = System.getProperty("browser");
 		System.out.print(browser);
-		if(browser == null){
-			browser = "chrome";
-		}
+		
 		if(browser.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver", "./chromedriver.exe");
-		driver = new ChromeDriver(); 
+			driver = new ChromeDriver(); 
 		}else if(browser.equals("edge")) {
 			System.setProperty("webdriver.chrome.driver", "./edgedriver.exe");
-			driver = new EdgeDriver();
-			
+			driver = new EdgeDriver();			
 		}
-		
-			
-		
-
+					
 		driver.get("http://leaftaps.com/opentaps/");
 		driver.findElementById("username").sendKeys("demosalesmanager");
 		driver.findElementById("password").sendKeys("crmsfa");
